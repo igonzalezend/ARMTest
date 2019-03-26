@@ -1,1 +1,1 @@
-az group deployment create --resource-group test --template-file "main.json"
+az group deployment create --resource-group test1 --template-file "main.json"
