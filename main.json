@@ -23,14 +23,14 @@
                 "templateLink": {
                     "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/networkProfiles1.json",
                     "contentVersion": "1.0.0.0"
-                }
-            },
-            "parameters": {
-                "vnetName": {
-                    "value": "[reference('vNetTemplate').outputs.vNetName.value]"
                 },
-                "subnetName":{
-                    "value": "[reference('vNetTemplate').outputs.subnet1Name.value]"
+                "parameters": {
+                    "vnetName": {
+                        "value": "[reference('vNetTemplate').outputs.vNetName.value]"
+                    },
+                    "subnetName":{
+                        "value": "[reference('vNetTemplate').outputs.subnet1Name.value]"
+                    }
                 }
             }
         },
@@ -43,14 +43,14 @@
                 "templateLink": {
                     "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/networkProfiles2.json",
                     "contentVersion": "1.0.0.0"
-                }
-            },
-            "parameters": {
-                "vnetName": {
-                    "value": "[reference('vNetTemplate').outputs.vNetName.value]"
                 },
-                "subnetName":{
-                    "value": "[reference('vNetTemplate').outputs.subnet2Name.value]"
+                "parameters": {
+                    "vnetName": {
+                        "value": "[reference('vNetTemplate').outputs.vNetName.value]"
+                    },
+                    "subnetName":{
+                        "value": "[reference('vNetTemplate').outputs.subnet2Name.value]"
+                    }
                 }
             }
         },
@@ -63,14 +63,14 @@
                 "templateLink": {
                     "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/containerGroups.json",
                     "contentVersion": "1.0.0.0"
-                }
-            },
-            "parameters": {
-                "networkProfileName1": {
-                    "value": "[reference('networkProfile1Template').outputs.networkProfileName.value]"
                 },
-                "networkProfileName2":{
-                    "value": "[reference('networkProfile2Template').outputs.networkProfileName.value]"
+                "parameters": {
+                    "networkProfileName1": {
+                        "value": "[reference('networkProfile1Template').outputs.networkProfileName.value]"
+                    },
+                    "networkProfileName2":{
+                        "value": "[reference('networkProfile2Template').outputs.networkProfileName.value]"
+                    }
                 }
             }
         }

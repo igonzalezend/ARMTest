@@ -27,9 +27,6 @@
         "type": "Microsoft.Network/networkProfiles",
         "apiVersion": "2018-07-01",
         "location": "[parameters('location')]",
-        "dependsOn": [
-          "[resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))]"
-        ],
         "properties": {
           "containerNetworkInterfaceConfigurations": [
             {
