@@ -78,7 +78,15 @@
             "[parameters('vnetName')]"
           ],
           "properties": {
-            "addressPrefix": "[parameters('subnet1Prefix')]"
+            "addressPrefix": "[parameters('subnet1Prefix')]",
+            "delegations": [
+              {
+                "name": "DelegationService",
+                "properties": {
+                  "serviceName": "Microsoft.ContainerInstance/containerGroups"
+                }
+              }
+            ]
           }
         },
         {
@@ -90,7 +98,15 @@
             "[parameters('vnetName')]"
           ],
           "properties": {
-            "addressPrefix": "[parameters('subnet2Prefix')]"
+            "addressPrefix": "[parameters('subnet2Prefix')]",
+            "delegations": [
+              {
+                "name": "DelegationService",
+                "properties": {
+                  "serviceName": "Microsoft.ContainerInstance/containerGroups"
+                }
+              } 
+            ]
           }
         }
       ]
