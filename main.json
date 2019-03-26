@@ -65,8 +65,7 @@
             "apiVersion": "2018-05-01",
             "name": "containersTemplate",
             "dependsOn": [
-                "networkProfile1Template",
-                "networkProfile2Template"
+                "vNetTemplate"
             ],
             "properties": {
                 "mode": "Incremental",

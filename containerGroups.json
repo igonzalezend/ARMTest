@@ -81,13 +81,11 @@
                 }
               }
             }
-          ]
-        },
-
-        "networkProfile": {
+          ],
+          "networkProfile": {
             "Id": "[resourceId('Microsoft.Network/networkProfiles', parameters('networkProfileName1'))]"
+            }
         }
-
       },
       {
         "type": "Microsoft.ContainerInstance/containerGroups",
