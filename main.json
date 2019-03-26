@@ -18,6 +18,9 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2018-05-01",
             "name": "networkProfile1Template",
+            "dependsOn": [
+                "vNetTemplate"
+            ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -38,6 +41,9 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2018-05-01",
             "name": "networkProfile2Template",
+            "dependsOn": [
+                "vNetTemplate"
+            ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -58,6 +64,10 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2018-05-01",
             "name": "containersTemplate",
+            "dependsOn": [
+                "networkProfile1Template",
+                "networkProfile2Template"
+            ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
