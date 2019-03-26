@@ -62,7 +62,7 @@
     "resources": [
       {
         "type": "Microsoft.ContainerInstance/containerGroups",
-        "apiVersion": "2018-04-01",
+        "apiVersion": "2018-07-01",
         "name": "Test1",
         "location": "[parameters('location')]",
 
@@ -96,7 +96,7 @@
       },
       {
         "type": "Microsoft.ContainerInstance/containerGroups",
-        "apiVersion": "2018-04-01",
+        "apiVersion": "2018-07-01",
         "name": "Test2",
         "location": "[parameters('location')]",
 
