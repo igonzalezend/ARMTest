@@ -97,5 +97,18 @@
       
     }
   ],
-  "outputs": {}
+  "outputs": {
+    "vNetName": {
+      "type": "string",
+      "value": "[parameters('vnetName')]"
+    },
+    "subnet1Name": {
+      "type": "string",
+      "value": "[parameters('subnet1Name')]"
+    },
+    "subnet2Name": {
+      "type": "string",
+      "value": "[parameters('subnet2Name')]"
+    }
+  }
 }
