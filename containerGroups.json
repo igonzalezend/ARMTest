@@ -117,11 +117,10 @@
                 }
               }
             }
-          ]
-        },
-
-        "networkProfile": {
-            "Id": "[resourceId('Microsoft.Network/networkProfiles', parameters('networkProfileName2'))]"
+          ],
+          "networkProfile": {
+              "Id": "[resourceId('Microsoft.Network/networkProfiles', parameters('networkProfileName2'))]"
+          }
         }
 
       }
