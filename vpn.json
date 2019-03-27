@@ -74,9 +74,6 @@
           "type": "subnets",
           "location": "[parameters('location')]",
           "name": "[parameters('subnet1Name')]",
-          "dependsOn": [
-            "[parameters('vnetName')]"
-          ],
           "properties": {
             "addressPrefix": "[parameters('subnet1Prefix')]",
             "delegations": [
@@ -95,7 +92,7 @@
           "location": "[parameters('location')]",
           "name": "[parameters('subnet2Name')]",
           "dependsOn": [
-            "[parameters('vnetName')]"
+            "[parameters('subnet1Name')]"
           ],
           "properties": {
             "addressPrefix": "[parameters('subnet2Prefix')]",
