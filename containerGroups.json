@@ -93,7 +93,13 @@
             "Id": "[resourceId('Microsoft.Network/networkProfiles', parameters('networkProfileName1'))]"
           },
           "ipAddress": {
-              "type": "Public"
+              "type": "Public",
+              "ports": [
+                  {
+                      "protocol" :"TCP",
+                      "port": "[parameters('port1')]" 
+                  }
+              ]
           }
         }
       },
@@ -130,7 +136,13 @@
               "Id": "[resourceId('Microsoft.Network/networkProfiles', parameters('networkProfileName2'))]"
           },
           "ipAddress": {
-              "type": "Public"
+              "type": "Public",
+              "ports": [
+                  {
+                      "protocol" :"TCP",
+                      "port": "[parameters('port2')]" 
+                  }
+              ]
           }
         }
       }
