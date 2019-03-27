@@ -91,9 +91,6 @@
           "type": "subnets",
           "location": "[parameters('location')]",
           "name": "[parameters('subnet2Name')]",
-          "dependsOn": [
-            "[parameters('subnet1Name')]"
-          ],
           "properties": {
             "addressPrefix": "[parameters('subnet2Prefix')]",
             "delegations": [
