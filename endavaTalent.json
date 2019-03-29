@@ -29,7 +29,7 @@
                 },
                 "parameters": {
                     "subnetName":{
-                        "value": "[reference('vNetTemplate').outputs.subnetName.value]"
+                        "value": "[reference('vNetTemplate').outputs.vNetName.value]"
                     }
                 }
             }

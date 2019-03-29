@@ -59,13 +59,6 @@
                 ],
                 "capabilities": [
 
-                ],
-                "isVirtualNetworkFilterEnabled": true,
-                "virtualNetworkRules":[
-                    {
-                        "id": "[resourceId('Microsoft.Network/virtualNetworks', parameters('subnetName'))]"
-
-                    }
                 ]
             },
             "tags": {
