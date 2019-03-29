@@ -21,7 +21,7 @@
             "metadata": {
                 "description": "The Azure Cosmos DB account name."
             },
-            "defaultValue": "EndavaTalentDB"
+            "defaultValue": "endavatalentdb"
         },
         "location": {
             "type": "string",
