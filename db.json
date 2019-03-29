@@ -42,10 +42,10 @@
             "apiVersion": "2015-04-08",
             "type": "Microsoft.DocumentDB/databaseAccounts",
             "kind": "[if(equals(parameters('apiType'), 'MongoDB'), 'MongoDB', 'GlobalDocumentDB')]",
-            "name": "[parameters('databaseAccountName')]",
+            "name": "endavatalentdb",
             "location": "[parameters('location')]",
             "properties": {
-                "name": "[parameters('databaseAccountName')]",
+                "name": "endavatalentdb",
                 "databaseAccountOfferType": "[variables('offerType')]",
                 "locations": [
                 {
@@ -76,7 +76,7 @@
     "outputs": {
         "connectionString": {
             "type": "string",
-            "value": "[concat('mongodb://', parameters('databaseAccountName'), ':', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('databaseAccountName')), '2015-04-08').primaryMasterKey, '@', parameters('databaseAccountName'), '.documents.azure.com:10255/', parameters('databaseAccountName'), '?ssl=true&replicaSet=globaldb')]"
+            "value": "[concat('mongodb://', 'endavatalentdb', ':', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', 'endavatalentdb'), '2015-04-08').primaryMasterKey, '@', 'endavatalentdb', '.documents.azure.com:10255/', 'endavatalentdb', '?ssl=true&replicaSet=globaldb')]"
         }
     }
 }
