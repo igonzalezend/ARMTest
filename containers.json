@@ -11,11 +11,11 @@
       },
       "frontendContainerName": {
         "type": "string",
-        "defaultValue": "Frontend"
+        "defaultValue": "frontend"
       },
       "backendContainerName": {
         "type": "string",
-        "defaultValue": "Backend"
+        "defaultValue": "backend"
       },
       "frontendImage": {
         "type": "string",
