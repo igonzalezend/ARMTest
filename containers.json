@@ -9,33 +9,41 @@
           "description": "Location for all resources."
         }
       },
-      "image1": {
+      "frontendContainerName": {
+        "type": "string",
+        "defaultValue": "Frontend"
+      },
+      "backendContainerName": {
+        "type": "string",
+        "defaultValue": "Backend"
+      },
+      "frontendImage": {
         "type": "string",
         "metadata": {
           "description": "Container image to deploy. Should be of the form accountName/imagename:tag for images stored in Docker Hub or a fully qualified URI for a private registry like the Azure Container Registry."
         },
-        "defaultValue": "igonzalezend/cicdchallenge:51"
+        "defaultValue": "igonzalezend/profiledb_frontend:latest"
       },
-      "image2": {
+      "backendImage": {
         "type": "string",
         "metadata": {
           "description": "Container image to deploy. Should be of the form accountName/imagename:tag for images stored in Docker Hub or a fully qualified URI for a private registry like the Azure Container Registry."
         },
-        "defaultValue": "igonzalezend/movie-analyst-ui:2"
+        "defaultValue": "igonzalezend/profiledb_backend:latest"
       },
-      "port1": {
-        "type": "string",
-        "metadata": {
-          "description": "Port to open on the container."
-        },
-        "defaultValue": "8000"
-      },
-      "port2": {
+      "frontendPort": {
         "type": "string",
         "metadata": {
           "description": "Port to open on the container."
         },
         "defaultValue": "3000"
+      },
+      "backendPort": {
+        "type": "string",
+        "metadata": {
+          "description": "Port to open on the container."
+        },
+        "defaultValue": "6200"
       },
       "cpuCores": {
         "type": "string",
@@ -51,11 +59,8 @@
         },
         "defaultValue": "1"
       },
-      "networkProfileName1": {
+      "connectionString": {
           "type": "string"
-      },
-      "networkProfileName2": {
-        "type": "string"
       }
     },
     "variables": {},
@@ -63,20 +68,28 @@
       {
         "type": "Microsoft.ContainerInstance/containerGroups",
         "apiVersion": "2018-07-01",
-        "name": "Test1",
+        "name": "[parameters('frontendContainerName')]",
         "location": "[parameters('location')]",
-
+        "dependsOn": [
+            "[parameters('backendContainerName')]"
+        ],
         "properties": {
           "osType": "Linux",
           "restartPolicy": "Always",
           "containers": [
             {
-              "name": "test1",
+              "name": "[parameters('frontendContainerName')]",
               "properties": {
-                "image": "[parameters('image1')]",
+                "image": "[parameters('frontendImage')]",
+                "environmentVariables":[
+                    {
+                        "name": "BACKEND_ADDRESS",
+                        "value": "[reference(resourceId('Microsoft.ContainerInstance/containerGroups', parameters('backendContainerName'))).ipAddress.ip]"
+                    }
+                ],
                 "ports": [
                   {
-                    "port": "[parameters('port1')]",
+                    "port": "[parameters('frontendPort')]",
                     "protocol": "TCP"
                   }
                 ],
@@ -89,15 +102,21 @@
               }
             }
           ],
-          "networkProfile": {
-            "Id": "[resourceId('Microsoft.Network/networkProfiles', parameters('networkProfileName1'))]"
+          "ipAddress":{
+              "type": "Public",
+              "ports":[
+                  {
+                      "protocol": "TCP",
+                      "port": "[parameters('frontendPort')]"
+                  }
+              ]
           }
         }
       },
       {
         "type": "Microsoft.ContainerInstance/containerGroups",
         "apiVersion": "2018-07-01",
-        "name": "Test2",
+        "name": "[parameters('backendContainerName')]",
         "location": "[parameters('location')]",
 
         "properties": {
@@ -105,12 +124,18 @@
           "restartPolicy": "Always",
           "containers": [
             {
-              "name": "test2",
+              "name": "[parameters('backendContainerName')]",
               "properties": {
-                "image": "[parameters('image2')]",
+                "image": "[parameters('backendImage')]",
+                "environmentVariables":[
+                    {
+                        "name": "MONGODB_URI",
+                        "value": "[parameters('connectionString')]"
+                    }
+                ],
                 "ports": [
                   {
-                    "port": "[parameters('port2')]",
+                    "port": "[parameters('backendPort')]",
                     "protocol": "TCP"
                   }
                 ],
@@ -123,8 +148,14 @@
               }
             }
           ],
-          "networkProfile": {
-              "Id": "[resourceId('Microsoft.Network/networkProfiles', parameters('networkProfileName2'))]"
+          "ipAddress":{
+              "type": "Public",
+              "ports":[
+                  {
+                      "protocol": "TCP",
+                      "port": "[parameters('backendPort')]"
+                  }
+              ]
           }
         }
       }
