@@ -57,6 +57,11 @@
                     "failoverPriority": 1
                 }
                 ],
+                "capabilities": [
+                    {
+                        "name": ""
+                    }
+                ],
                 "isVirtualNetworkFilterEnabled": true,
                 "virtualNetworkRules":[
                     {
