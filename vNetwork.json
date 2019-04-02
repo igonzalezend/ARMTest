@@ -23,14 +23,42 @@
           "description": "Address prefix"
         }
       },
-      "subnet1Prefix": {
+      "dbSubnetPrefix": {
         "type": "string",
         "defaultValue": "10.0.0.0/24",
         "metadata": {
           "description": "Subnet 1 Prefix"
         }
       },
-      "subnet1Name": {
+      "dbSubnetName": {
+        "type": "string",
+        "defaultValue": "DBSubnet",
+        "metadata": {
+          "description": "Subnet 1 Name"
+        }
+      },
+      "frontendSubnetPrefix": {
+        "type": "string",
+        "defaultValue": "10.0.0.0/24",
+        "metadata": {
+          "description": "Subnet 1 Prefix"
+        }
+      },
+      "frontendSubnetName": {
+        "type": "string",
+        "defaultValue": "DBSubnet",
+        "metadata": {
+          "description": "Subnet 1 Name"
+        }
+      },
+      "backendSubnetPrefix": {
+        "type": "string",
+        "defaultValue": "10.0.0.0/24",
+        "metadata": {
+          "description": "Subnet 1 Prefix"
+        }
+      },
+      "backendSubnetName": {
         "type": "string",
         "defaultValue": "DBSubnet",
         "metadata": {
@@ -59,12 +87,36 @@
             "apiVersion": "2018-12-01",
             "type": "subnets",
             "location": "[parameters('location')]",
-            "name": "[parameters('subnet1Name')]",
+            "name": "[parameters('backendSubnetName')]",
             "dependsOn": [
               "[parameters('vnetName')]"
             ],
             "properties": {
-              "addressPrefix": "[parameters('subnet1Prefix')]"
+              "addressPrefix": "[parameters('backendSubnetPrefix')]"
+            }
+          },
+          {
+            "apiVersion": "2018-12-01",
+            "type": "subnets",
+            "location": "[parameters('location')]",
+            "name": "[parameters('frontendSubnetName')]",
+            "dependsOn": [
+              "[parameters('vnetName')]"
+            ],
+            "properties": {
+              "addressPrefix": "[parameters('frontendSubnetPrefix')]"
+            }
+          },
+          {
+            "apiVersion": "2018-12-01",
+            "type": "subnets",
+            "location": "[parameters('location')]",
+            "name": "[parameters('dbSubnetName')]",
+            "dependsOn": [
+              "[parameters('vnetName')]"
+            ],
+            "properties": {
+              "addressPrefix": "[parameters('dbSubnetPrefix')]"
             }
           }
         ]
@@ -76,9 +128,17 @@
         "type": "string",
         "value": "[parameters('vnetName')]"
       },
-      "subnetName": {
+      "dbSubnetName": {
         "type": "string",
-        "value": "[parameters('subnet1Name')]"
+        "value": "[parameters('dbSubnetName')]"
+      },
+      "backendSubnetName": {
+        "type": "string",
+        "value": "[parameters('backendSubnetName')]"
+      },
+      "frontendSubnetName": {
+        "type": "string",
+        "value": "[parameters('frontendSubnetName')]"
       }
     }
   }
