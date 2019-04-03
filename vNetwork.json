@@ -25,45 +25,27 @@
       },
       "dbSubnetPrefix": {
         "type": "string",
-        "defaultValue": "10.0.0.0/24",
-        "metadata": {
-          "description": "Subnet 1 Prefix"
-        }
+        "defaultValue": "10.0.0.0/24"
       },
       "dbSubnetName": {
         "type": "string",
-        "defaultValue": "DBSubnet",
-        "metadata": {
-          "description": "Subnet 1 Name"
-        }
+        "defaultValue": "dbSubnet"
       },
       "frontendSubnetPrefix": {
         "type": "string",
-        "defaultValue": "10.0.0.0/24",
-        "metadata": {
-          "description": "Subnet 1 Prefix"
-        }
+        "defaultValue": "10.0.0.0/24"
       },
       "frontendSubnetName": {
         "type": "string",
-        "defaultValue": "DBSubnet",
-        "metadata": {
-          "description": "Subnet 1 Name"
-        }
+        "defaultValue": "frontendSubnet"
       },
       "backendSubnetPrefix": {
         "type": "string",
-        "defaultValue": "10.0.0.0/24",
-        "metadata": {
-          "description": "Subnet 1 Prefix"
-        }
+        "defaultValue": "10.0.0.0/24"
       },
       "backendSubnetName": {
         "type": "string",
-        "defaultValue": "DBSubnet",
-        "metadata": {
-          "description": "Subnet 1 Name"
-        }
+        "defaultValue": " backendSubnet"
       }
     },
     "variables": {},
