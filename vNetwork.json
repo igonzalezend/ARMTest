@@ -95,7 +95,15 @@
               "[parameters('vnetName')]"
             ],
             "properties": {
-              "addressPrefix": "[parameters('dbSubnetPrefix')]"
+              "addressPrefix": "[parameters('dbSubnetPrefix')]",
+              "serviceEndpoints":[
+                {
+                  "service": "Microsoft.AzureCosmosDB",
+                  "locations": [
+                    "[resourceGroup().location]"
+                  ]
+                }
+              ]
             }
           }
         ]

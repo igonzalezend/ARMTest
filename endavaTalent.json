@@ -34,7 +34,6 @@
                     "vNetName":{
                         "value": "reference('vNetTemplate').outputs.vNetName.value"
                     }
-                    
                 }
             }
         }
