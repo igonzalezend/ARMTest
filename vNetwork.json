@@ -18,10 +18,7 @@
       },
       "vnetAddressPrefix": {
         "type": "string",
-        "defaultValue": "10.0.0.0/16",
-        "metadata": {
-          "description": "Address prefix"
-        }
+        "defaultValue": "10.0.0.0/16"
       },
       "dbSubnetPrefix": {
         "type": "string",
