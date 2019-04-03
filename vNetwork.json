@@ -67,9 +67,6 @@
             "type": "subnets",
             "location": "[parameters('location')]",
             "name": "[parameters('backendSubnetName')]",
-            "dependsOn": [
-              "[parameters('vnetName')]"
-            ],
             "properties": {
               "addressPrefix": "[parameters('backendSubnetPrefix')]"
             }
@@ -79,9 +76,6 @@
             "type": "subnets",
             "location": "[parameters('location')]",
             "name": "[parameters('frontendSubnetName')]",
-            "dependsOn": [
-              "[parameters('vnetName')]"
-            ],
             "properties": {
               "addressPrefix": "[parameters('frontendSubnetPrefix')]"
             }
@@ -91,9 +85,6 @@
             "type": "subnets",
             "location": "[parameters('location')]",
             "name": "[parameters('dbSubnetName')]",
-            "dependsOn": [
-              "[parameters('vnetName')]"
-            ],
             "properties": {
               "addressPrefix": "[parameters('dbSubnetPrefix')]"
             }
