@@ -25,7 +25,7 @@
       },
       "dbSubnetPrefix": {
         "type": "string",
-        "defaultValue": "10.0.0.0/24"
+        "defaultValue": "10.3.0.0/24"
       },
       "dbSubnetName": {
         "type": "string",
@@ -33,7 +33,7 @@
       },
       "frontendSubnetPrefix": {
         "type": "string",
-        "defaultValue": "10.0.0.0/24"
+        "defaultValue": "10.1.0.0/24"
       },
       "frontendSubnetName": {
         "type": "string",
@@ -41,7 +41,7 @@
       },
       "backendSubnetPrefix": {
         "type": "string",
-        "defaultValue": "10.0.0.0/24"
+        "defaultValue": "10.2.0.0/24"
       },
       "backendSubnetName": {
         "type": "string",
