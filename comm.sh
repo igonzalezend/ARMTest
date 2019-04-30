@@ -1,1 +1,1 @@
-az group deployment create --resource-group "EndavaTalent" --template-file "endavaTalent.json"
+az group deployment create --resource-group "EndavaTalentTest" --template-file "endavaTalent.json"

@@ -13,6 +13,26 @@
                     "contentVersion": "1.0.0.0"
                 }
             }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-05-01",
+            "name": "aksTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/AKS.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "vnetSubnetID": {
+                        "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', reference('vNetTemplate').output.kubernetesClusterSubnetName.value)]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "vNetTemplate"
+            ]
         }
     ]
 }

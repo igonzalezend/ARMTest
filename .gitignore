@@ -4,3 +4,4 @@ pipeline_stuff
 comm.sh
 delete.sh
 dockerPush.sh
+deleter.sh
