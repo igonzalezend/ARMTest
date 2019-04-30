@@ -13,29 +13,6 @@
                     "contentVersion": "1.0.0.0"
                 }
             }
-        },
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2018-05-01",
-            "name": "dbTemplate",
-            "dependsOn": [
-                "vNetTemplate"
-            ],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/db.json",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "subnetName":{
-                        "value": "[reference('vNetTemplate').outputs.dbSubnetName.value]"
-                    },
-                    "vNetName":{
-                        "value": "reference('vNetTemplate').outputs.vNetName.value"
-                    }
-                }
-            }
         }
     ]
 }

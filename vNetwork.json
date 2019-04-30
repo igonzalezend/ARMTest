@@ -13,36 +13,20 @@
         "type": "string",
         "defaultValue": "EndavaTalentVNet",
         "metadata": {
-          "description": "VNet name"
+          "description": "Virtual network name"
         }
       },
       "vnetAddressPrefix": {
         "type": "string",
         "defaultValue": "10.0.0.0/16"
       },
-      "dbSubnetPrefix": {
+      "kubernetesClusterSubnetPrefix": {
         "type": "string",
-        "defaultValue": "10.0.3.0/24"
+        "defaultValue": "10.0.0.0/24"
       },
-      "dbSubnetName": {
+      "kubernetesClusterSubnetName": {
         "type": "string",
-        "defaultValue": "dbSubnet"
-      },
-      "frontendSubnetPrefix": {
-        "type": "string",
-        "defaultValue": "10.0.1.0/24"
-      },
-      "frontendSubnetName": {
-        "type": "string",
-        "defaultValue": "frontendSubnet"
-      },
-      "backendSubnetPrefix": {
-        "type": "string",
-        "defaultValue": "10.0.2.0/24"
-      },
-      "backendSubnetName": {
-        "type": "string",
-        "defaultValue": "backendSubnet"
+        "defaultValue": "endavaTalentCluster"
       }
     },
     "variables": {},
@@ -60,54 +44,21 @@
             ]
           }
         },
-  
+
         "resources": [
           {
             "apiVersion": "2018-12-01",
             "type": "subnets",
             "location": "[parameters('location')]",
-            "name": "[parameters('backendSubnetName')]",
+            "name": "[parameters('kubernetesClusterSubnetName')]",
             "dependsOn": [
               "[parameters('vnetName')]"
             ],
             "properties": {
-              "addressPrefix": "[parameters('backendSubnetPrefix')]"
-            }
-          },
-          {
-            "apiVersion": "2018-12-01",
-            "type": "subnets",
-            "location": "[parameters('location')]",
-            "name": "[parameters('frontendSubnetName')]",
-            "dependsOn": [
-              "[parameters('vnetName')]"
-            ],
-            "properties": {
-              "addressPrefix": "[parameters('frontendSubnetPrefix')]"
-            }
-          },
-          {
-            "apiVersion": "2018-12-01",
-            "type": "subnets",
-            "location": "[parameters('location')]",
-            "name": "[parameters('dbSubnetName')]",
-            "dependsOn": [
-              "[parameters('vnetName')]"
-            ],
-            "properties": {
-              "addressPrefix": "[parameters('dbSubnetPrefix')]",
-              "serviceEndpoints":[
-                {
-                  "service": "Microsoft.AzureCosmosDB",
-                  "locations": [
-                    "[resourceGroup().location]"
-                  ]
-                }
-              ]
+              "addressPrefix": "[parameters('kubernetesClusterSubnetPrefix')]"
             }
           }
         ]
-        
       }
     ],
     "outputs": {
@@ -115,17 +66,9 @@
         "type": "string",
         "value": "[parameters('vnetName')]"
       },
-      "dbSubnetName": {
+      "kubernetesClusterSubnetName": {
         "type": "string",
-        "value": "[parameters('dbSubnetName')]"
-      },
-      "backendSubnetName": {
-        "type": "string",
-        "value": "[parameters('backendSubnetName')]"
-      },
-      "frontendSubnetName": {
-        "type": "string",
-        "value": "[parameters('frontendSubnetName')]"
+        "value": "[parameters('kubernetesClusterSubnetName')]"
       }
     }
   }

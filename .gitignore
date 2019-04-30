@@ -1,1 +1,6 @@
 .terraform
+exec.sh
+pipeline_stuff
+comm.sh
+delete.sh
+dockerPush.sh
