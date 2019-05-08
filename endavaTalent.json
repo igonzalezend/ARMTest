@@ -29,10 +29,10 @@
                         "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', reference('vNetTemplate').outputs.vNetName.value, reference('vNetTemplate').outputs.kubernetesClusterSubnetName.value)]"
                     },
                     "servicePrincipalClientId":{
-                        "value": ""
+                        "value": "2c2c6115-adf6-4665-9497-3cdfa83ba771"
                     },
                     "servicePrincipalClientSecret":{
-                        "value": ""
+                        "value": "b0daa73b-ff4b-4e61-9278-35b1364102cd"
                     }
                 }
             },

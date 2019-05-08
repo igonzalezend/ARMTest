@@ -101,6 +101,12 @@
                 "servicePrincipalProfile": {
                     "clientId": "[parameters('servicePrincipalClientId')]",
                     "Secret": "[parameters('servicePrincipalClientSecret')]"
+                },
+                "addonProfiles": {
+                    "httpApplicationRouting": {
+                        "enabled": false,
+                        "config": null
+                    }
                 }
             }
         }
