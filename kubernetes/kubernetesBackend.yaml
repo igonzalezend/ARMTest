@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: endavatalentbackend.azurecr.io/node-backend:testing-0.13
+        image: endavatalentbackend.azurecr.io/node-backend:testing-%GIT_TAG%
         env:
         - name: MONGODB_URI
           value: "mongodb://10.1.112.23:27017/endava-talent-db?"

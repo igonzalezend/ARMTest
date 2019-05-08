@@ -8,7 +8,7 @@ spec:
     - name: acr-auth-front
   containers:
   - name: backend
-    image: endavatalentbackend.azurecr.io/node-backend:testing-0.13
+    image: endavatalentbackend.azurecr.io/node-backend:testing-%GIT_TAG%
     resources:
       requests:
         cpu: 100m
@@ -20,7 +20,7 @@ spec:
     - containerPort: 6200
       name: backend
   - name: frontend
-    image: endavatalentfrontend.azurecr.io/react-frontend:testing-0.13
+    image: endavatalentfrontend.azurecr.io/react-frontend:testing-%GIT_TAG%
     resources:
       requests:
         cpu: 100m

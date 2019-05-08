@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: endavatalentfrontend.azurecr.io/react-frontend:testing-0.13
+        image: endavatalentfrontend.azurecr.io/react-frontend:testing-%GIT_TAG%
         resources:
           requests:
             cpu: 100m
