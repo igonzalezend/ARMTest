@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-05-01",
+            "name": "vNetTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/vNetwork.json",
+                    "contentVersion": "1.0.0.0"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-05-01",
+            "name": "aksTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/AKS.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "vnetSubnetID": {
+                        "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', reference('vNetTemplate').outputs.vNetName.value, reference('vNetTemplate').outputs.kubernetesClusterSubnetName.value)]"
+                    },
+                    "servicePrincipalClientId":{
+                        "value": "2c2c6115-adf6-4665-9497-3cdfa83ba771"
+                    },
+                    "servicePrincipalClientSecret":{
+                        "value": "b0daa73b-ff4b-4e61-9278-35b1364102cd"
+                    }
+                }
+            },
+            "dependsOn": [
+                "vNetTemplate"
+            ]
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-05-01",
+            "name": "acrTemplate",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/ACR.json",
+                    "contentVersion": "1.0.0.0"
+                }
+            }
+        }
+    ]
+}

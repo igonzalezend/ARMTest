@@ -1,7 +1,8 @@
 .terraform
 exec.sh
 pipeline_stuff
-comm.sh
-delete.sh
 dockerPush.sh
 deleter.sh
+delete_iac.sh
+comm.sh
+delete.sh
