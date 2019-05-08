@@ -26,7 +26,13 @@
                 },
                 "parameters": {
                     "vnetSubnetID": {
-                        "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', reference('vNetTemplate').outputs.kubernetesClusterSubnetName.value)]"
+                        "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', reference('vNetTemplate').outputs.vNetName.value, reference('vNetTemplate').outputs.kubernetesClusterSubnetName.value)]"
+                    },
+                    "servicePrincipalClientId":{
+                        "value": ""
+                    },
+                    "servicePrincipalClientSecret":{
+                        "value": ""
                     }
                 }
             },

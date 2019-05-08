@@ -56,6 +56,18 @@
             "metadata": {
                 "description": "Virtual Network Subnet's ID"
             }
+        },
+        "servicePrincipalClientId": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Service principal's appId"
+            }
+        }, 
+        "servicePrincipalClientSecret": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Service principal's password"
+            }
         }
     },
     "resources": [
@@ -85,6 +97,10 @@
                     "serviceCidr": "10.1.0.0/16",
                     "dnsServiceIP": "10.1.0.10",
                     "dockerBridgeCidr": "172.17.0.1/16"
+                },
+                "servicePrincipalProfile": {
+                    "clientId": "[parameters('servicePrincipalClientId')]",
+                    "Secret": "[parameters('servicePrincipalClientSecret')]"
                 }
             }
         }
