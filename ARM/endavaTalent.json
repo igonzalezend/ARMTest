@@ -9,7 +9,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/vNetwork.json",
+                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/ARM/vNetwork.json",
                     "contentVersion": "1.0.0.0"
                 }
             }
@@ -21,7 +21,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/AKS.json",
+                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/ARM/AKS.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -29,10 +29,10 @@
                         "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', reference('vNetTemplate').outputs.vNetName.value, reference('vNetTemplate').outputs.kubernetesClusterSubnetName.value)]"
                     },
                     "servicePrincipalClientId":{
-                        "value": "2c2c6115-adf6-4665-9497-3cdfa83ba771"
+                        "value": ""
                     },
                     "servicePrincipalClientSecret":{
-                        "value": "b0daa73b-ff4b-4e61-9278-35b1364102cd"
+                        "value": ""
                     }
                 }
             },
@@ -47,7 +47,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/ACR.json",
+                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/ARM/ACR.json",
                     "contentVersion": "1.0.0.0"
                 }
             }
