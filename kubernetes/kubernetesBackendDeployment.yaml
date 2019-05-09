@@ -30,14 +30,4 @@ spec:
           name: backend
       imagePullSecrets:
       - name: acr-auth
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: backend
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 6200
-  selector:
-    app: backend
+
