@@ -11,7 +11,7 @@
         },
         "containerName": {
             "type": "string",
-            "defaultValue": "testResults",
+            "defaultValue": "test-results",
             "metadata": {
                 "description": "Specifies the name of the blob container."
             }
