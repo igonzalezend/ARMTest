@@ -51,18 +51,6 @@
                     "contentVersion": "1.0.0.0"
                 }
             }
-        },
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2018-05-01",
-            "name": "blobStorageTemplate",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/igonzalezend/ARMTest/develop/ARM/blobStorage.json",
-                    "contentVersion": "1.0.0.0"
-                }
-            }
         }
     ]
 }

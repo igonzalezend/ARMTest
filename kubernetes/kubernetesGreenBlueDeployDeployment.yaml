@@ -32,5 +32,24 @@ spec:
     - containerPort: 3000
       name: frontend
 ---
-
-      
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 6200
+  selector:
+    app: backend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3000
+  selector:
+    app: frontend         
