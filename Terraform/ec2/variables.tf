@@ -6,5 +6,14 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "EndavaTalent"
+  default = "EndavaTalentQA"
 }
+
+variable "subnet_id" {
+  type = "string"
+}
+
+variable "sg_id" {
+  type = "list"
+}
+
