@@ -26,5 +26,5 @@ spec:
         - containerPort: 3000
           name: frontend
       imagePullSecrets:
-      - name: acr-auth-front
+      - name: acr-auth
                  
