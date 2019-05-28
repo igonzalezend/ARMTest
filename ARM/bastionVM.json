@@ -56,7 +56,7 @@
       "imagePublisher": "Canonical",
       "imageOffer": "UbuntuServer",
       "nicName": "EndavaTalentQAVMNic",
-      "subnetName": "EndavaTalentBastion",
+      "subnetName": "endavaTalentBastionQA",
       "publicIPAddressName": "EndavaTalentQAPublicIP",
       "publicIPAddressType": "Dynamic",
       "vmName": "EndavaTalentQAVM",

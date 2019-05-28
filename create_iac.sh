@@ -6,5 +6,5 @@ sed -i "s/%ClientId%/${SERVICE_PRINCIPAL_DATA[0]}/g" endavaTalent.json
 sed -i "s/%ClientSecret%/${SERVICE_PRINCIPAL_DATA[1]}/g" endavaTalent.json
 az group deployment create --name "EndavaTalentDeployment" --resource-group "EndavaTalent" --template-file "endavaTalent.json"
 az group deployment create --name "EndavaTalentBastionQA" --resource-group "EndavaTalent" --template-file "bastionVM.json" --parameters "bastionVM.parameters.json"
-sed -i "s/${SERVICE_PRINCIPAL_DATA[0]}2/%ClientId%/g" endavaTalent.json
+sed -i "s/${SERVICE_PRINCIPAL_DATA[0]}/%ClientId%/g" endavaTalent.json
 sed -i "s/${SERVICE_PRINCIPAL_DATA[1]}/%ClientSecret%/g" endavaTalent.json
