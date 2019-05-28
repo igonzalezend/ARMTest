@@ -32,7 +32,7 @@
         },
         "agentVMSize": {
             "type": "string",
-            "defaultValue": "Standard_A1_v2",
+            "defaultValue": "Standard_B2s",
             "metadata": {
                 "description": "The size of the Virtual Machine."
             }
