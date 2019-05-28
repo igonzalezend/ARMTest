@@ -34,7 +34,7 @@
       },
       "bastionVMSubnetName": {
         "type": "string",
-        "defaultValue": "endavaTalentCluster"
+        "defaultValue": "endavaTalentBastionQA"
       }
     },
     "variables": {},
