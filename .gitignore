@@ -4,3 +4,4 @@ pipeline_stuff
 delete.sh
 user-data.sh
 EndavaTalentQA.pem
+bastionVM.parameters.json
