@@ -139,11 +139,12 @@
               "version": "latest"
             },
             "osDisk": {
-              "createOption": "FromImage"
+              "createOption": "FromImage",
+              "diskSizeGB": 0
             },
             "dataDisks": [
               {
-                "diskSizeGB": 1023,
+                "diskSizeGB": 0,
                 "lun": 0,
                 "createOption": "Empty"
               }
