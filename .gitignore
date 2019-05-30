@@ -5,3 +5,4 @@ delete.sh
 user-data.sh
 EndavaTalentQA.pem
 bastionVM.parameters.json
+/mongodb/

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: endavatalentregistry.azurecr.io/react-frontend:testing-%GIT_TAG%
+        image: igonzalezend/endava-talent-qa:react-frontend-testing-%GIT_TAG%
         resources:
           requests:
             cpu: 100m
@@ -27,4 +27,8 @@ spec:
           name: frontend
       imagePullSecrets:
       - name: acr-auth
+      volumes:
+      - name: azurefileshare
+        persistentVolumeClaim:
+          claimName: dynamic-persistence-volume-claim
                  

@@ -29,9 +29,9 @@ spec:
           containerPort: 27017
           hostPort: 27017
         volumeMounts:
-            - name: mongo-persistent-storage
+            - name: azurefileshare
               mountPath: /data/db
       volumes:
-        - name: mongo-persistent-storage
+        - name: azurefileshare
           persistentVolumeClaim:
-            claimName: azure-managed-disk
+            claimName: dynamic-persistence-volume-claim
