@@ -4,8 +4,8 @@ metadata:
   name: dynamic-persistence-volume-claim
 spec:
   accessModes:
-    - ReadWriteMany
-  storageClassName: azurefilestorage
+    - ReadWriteOnce
+  storageClassName: default
   resources:
     requests:
-      storage: 5Gi
+      storage: 1Gi
