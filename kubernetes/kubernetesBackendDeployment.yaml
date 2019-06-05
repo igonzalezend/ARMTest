@@ -26,7 +26,7 @@ spec:
         - containerPort: 6200
           name: backend
       imagePullSecrets:
-      - name: acr-auth
+      - name: endavatalentqa-registry
       volumes:
       - name: azurefileshare
         persistentVolumeClaim:
