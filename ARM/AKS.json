@@ -95,7 +95,7 @@
                         "vnetSubnetID": "[parameters('vnetSubnetID')]"
                     }
                 ],
-                "enableRBAC": true,
+                "enableRBAC": false,
                 "networkProfile": {
                     "networkPlugin": "azure",
                     "serviceCidr": "10.1.0.0/16",
